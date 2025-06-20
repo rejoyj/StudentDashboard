@@ -1,14 +1,18 @@
-
-import './App.css';
+import React from 'react'
+import AdminLogin from './Components/AdminLogin'
 import StudentDashboard from './StudentDashboard';
 
-
-function App() {
+const App = () => {
   return (
     <>
+    <AdminLogin />
     <StudentDashboard />
     </>
   );
 }
 
+
+
+
 export default App;
+

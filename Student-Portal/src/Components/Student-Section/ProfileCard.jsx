@@ -1,17 +1,22 @@
 import React from 'react';
+<<<<<<< HEAD
 import profilepic from '../../assets/7070fce3-5742-4554-b5a2-2071a4c61fdb.jpg'; // Adjust the path as necessary   
 import height from './../../../node_modules/dom-helpers/esm/height';
+=======
+// import profilepic from '../../assets/Download free png of PNG Young indian man student happy smile_ by Hein about png, texture, face, book, and person 16597328.jpg'; // Adjust the path as necessary   
+// import height from './../../../node_modules/dom-helpers/esm/height';
+>>>>>>> upstream/main
 
 function ProfileCard() {
   return (
     <div className="p-3 border rounded text-center bg-white shadow-sm">
-      <img
+      {/* <img
         src={profilepic}
         className="rounded-circle mb-3 border"
         alt="Profile" height="130" width="120"
             
         style={{ objectFit: 'cover' }}
-      />
+      /> */}
       <h5 className="fw-semibold">PREM KUMAR</h5>
       <hr />
       <div className="text-start small">
