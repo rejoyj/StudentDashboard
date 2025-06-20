@@ -3,7 +3,7 @@ import './AdminLogin.css';
 
 const AdminLogin = () => {
   return (
-    <div className="container d-flex flex-column align-items-center justify-content-center ">
+    <div className="container-1 d-flex flex-column align-items-center justify-content-center ">
       <div>
         
       </div>
