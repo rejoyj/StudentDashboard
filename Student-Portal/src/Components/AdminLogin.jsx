@@ -4,12 +4,14 @@ import './AdminLogin.css';
 const AdminLogin = () => {
   return (
     <div className="container d-flex flex-column align-items-center justify-content-center ">
+      <div>
+        
+      </div>
        <div className="login-form p-4 flex-grow-1">
-        <h5>Admin Login</h5>
-        <p>Welcome onboard with us!</p>
-       </div>
-       <div className="login-box">
-         <div className="mb-3">
+        <h5 className='d-flex flex-column align-items-center justify-content-center'>Admin Login</h5>
+        <p className='d-flex flex-column align-items-center justify-content-center'>Welcome onboard with us!</p>
+
+        <div className="mb-3">
         <label htmlFor="email" className='form-label'>Admin Email</label>
         <input type="email" className='form-control' placeholder='Enter your username' />
        </div>
@@ -26,7 +28,7 @@ const AdminLogin = () => {
        <button className='btn btn-warning w-100 fw-semibold'>LogIn as Admin</button>
 
        <div>
-        <small>Are You a student? <a href="#" className='fw-bold text-decoration-none'>Login as a student</a></small>
+        <small className='d-flex flex-column align-items-center justify-content-center'>Are You a student? <a href="#" className='fw-bold text-decoration-none'>Login as a student</a></small>
        </div>
     </div>
        </div>
