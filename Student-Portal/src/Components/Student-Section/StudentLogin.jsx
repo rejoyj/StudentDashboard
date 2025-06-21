@@ -3,7 +3,7 @@ import './StudentLogin.css'
 
 const StudentLogin = () => {
   return (
-     <div className="container d-flex flex-column align-items-center justify-content-center ">
+     <div className="container-2 d-flex flex-column align-items-center justify-content-center ">
       <div>
         
       </div>
