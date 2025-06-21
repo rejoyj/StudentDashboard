@@ -10,6 +10,7 @@ import StudentLogin from './Components/Student-Section/StudentLogin';
 import FeePayment from './FeePayment';
 import StudentAdmin from './Components/StudentAdmin';
 import StudentDoc from './Components/Student-Doc/StudentDoc';
+import AdminStudentProfile from './Components/AdminStudentProfile';
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
     <FeePayment />
     <StudentAdmin />
     <StudentDoc />
+    <AdminStudentProfile />
 
     </>
   );
