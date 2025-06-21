@@ -3,8 +3,7 @@ import AdminLogin from './Components/Admin-Section/AdminLogin'
 import StudentDashboard from './StudentDashboard';
 import StudentLogin from './Components/Student-Section/StudentLogin';
 import FeePayment from './FeePayment';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import StudentAdmin from './Components/StudentAdmin';
 const App = () => {
   return (
     <>
@@ -12,6 +11,7 @@ const App = () => {
     <StudentDashboard />
     <StudentLogin />
     <FeePayment />
+    <StudentAdmin />
     </>
   );
 }

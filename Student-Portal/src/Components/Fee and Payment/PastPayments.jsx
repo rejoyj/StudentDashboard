@@ -7,7 +7,6 @@ const PastPayments = () => {
     <Card className='p-3 mb-3 shadow-sm'>
       <h5 className='fw-bold'>Past Payments</h5>
 
-      {/* Fixed: Wrap in Row */}
       <Row className="mb-3">
         <Col md={4}>
           <Form.Select style={{ backgroundColor: 'skyblue' }} className="mb-2">
@@ -27,10 +26,10 @@ const PastPayments = () => {
         </Col>
       </Row>
 
-      {/* Wrap table in a div for curved borders */}
+     
       <div className="border border-dark rounded overflow-hidden">
-        <Table bordered hover responsive className="mb-0">
-          <thead style={{ backgroundColor: '#ffc107' }}>
+        <Table bordered hover responsive className="mb-0 ">
+          <thead>
             <tr>
               <th>Date</th>
               <th>Amount</th>
