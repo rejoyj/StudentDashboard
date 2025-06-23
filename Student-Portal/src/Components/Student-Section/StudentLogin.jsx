@@ -1,5 +1,6 @@
 import React from 'react'
 import './StudentLogin.css'
+import { Link } from 'react-router-dom';
 
 const StudentLogin = () => {
   return (
@@ -28,7 +29,7 @@ const StudentLogin = () => {
        <button className='btn btn-warning w-100 fw-semibold'>LogIn as Admin</button>
 
        <div>
-        <small className='d-flex flex-column align-items-center justify-content-center'>Have Admin Access? <a href="#" className='fw-bold text-decoration-none'>LogIn as an Admin </a></small>
+        <small className='d-flex flex-column align-items-center justify-content-center'>Have Admin Access? <Link to="/" className='fw-bold text-decoration-none'>LogIn as an Admin </Link></small>
        </div>
     </div>
        </div>

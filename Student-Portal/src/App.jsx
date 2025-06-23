@@ -11,7 +11,11 @@ import StudentLogin from './Components/Student-Section/StudentLogin';
 import FeePayment from './FeePayment';
 import StudentAdmin from './Components/StudentAdmin';
 import StudentDoc from './Components/Student-Doc/StudentDoc';
+
+import StudentTable from './Components/Student-Admin Section/StudentTable';
+
 import AdminStudentProfile from './Components/AdminStudentProfile';
+
 
 const App = () => {
   return (
@@ -19,10 +23,12 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<NewLogin />} />
-        <Route path="/admin" element={<AdminLogin />} />
+        <Route path="/studentlogin" element={<StudentLogin />} />
+        
+        <Route path="/student-dashboard" element={<StudentDashboard />} />
         
       </Routes>
-      <StudentLogin />
+      {/* <StudentTable /> */}
     </Router>
     
 
