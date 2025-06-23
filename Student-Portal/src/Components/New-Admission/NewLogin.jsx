@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import { Container, Row, Col } from 'react-bootstrap';
 import './NewLogin.css';
 
@@ -47,7 +48,7 @@ This will help us to create your student profile, please enter accurate and comp
               <div className="text-center">
                 <small className="text-muted">
                   Are you a student?{' '}
-                  <a href="#" className="fw-bold text-decoration-none">Login as a student</a>
+                  <Link to="/admin" className="fw-bold text-decoration-none">Login as a student</Link>
                 </small>
               </div>
             </div>
