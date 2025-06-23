@@ -11,10 +11,15 @@ import StudentLogin from './Components/Student-Section/StudentLogin';
 import FeePayment from './FeePayment';
 import StudentAdmin from './Components/StudentAdmin';
 import StudentDoc from './Components/Student-Doc/StudentDoc';
+
 import StudentTable from './Components/Student-Admin Section/StudentTable';
+
+import AdminStudentProfile from './Components/AdminStudentProfile';
+
 
 const App = () => {
   return (
+
     <Router>
       <Routes>
         <Route path="/" element={<NewLogin />} />
@@ -26,6 +31,7 @@ const App = () => {
       {/* <StudentTable /> */}
     </Router>
     
+
   );
 }
 
