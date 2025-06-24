@@ -2,8 +2,15 @@ import React from "react";
 import Header from "../Student-Section/Header";
 import { Container, Row, Col } from 'react-bootstrap';
 import './Subjects.css';
+import { useNavigate } from 'react-router-dom';
 
 function Subjects() {
+  const navigate = useNavigate();
+
+  const returnDash = () => {
+   
+    navigate('/student-dashboard');
+  };
   return (
     <div className="container-fluid py-3" >
       <div className="bg-white rounded shadow p-4">
@@ -89,7 +96,7 @@ function Subjects() {
         If it's found to be false your registration will not be considered.
       </p>
         </Col>
-        <Col sm={4}><button className="submit-btn">Submit Now</button></Col>
+        <Col sm={4}><button className="submit-btn" onClick={returnDash}>Submit Now</button></Col>
       </Row>
       </Container>
       </div>

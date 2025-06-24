@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import NewLogin from './Components/New-Admission/NewLogin';
 import Subjects from './Components/Subjects/Subjects';
+import Bonafied from './Components/Bonafied/Bonafied';
 
 
 import StudentLogin from './Components/Student-Section/StudentLogin';
@@ -26,9 +27,13 @@ const App = () => {
         <Route path="/studentlogin" element={<StudentLogin />} />
         
         <Route path="/student-dashboard" element={<StudentDashboard />} />
+        <Route path="/feepayment" element={<FeePayment/>} />
+        <Route path="/subjects" element={<Subjects/>} />
         
       </Routes>
-      {/* <StudentTable /> */}
+      {/* <Subjects /> */}
+      <Bonafied />
+      <AdminStudentProfile />
     </Router>
     
 

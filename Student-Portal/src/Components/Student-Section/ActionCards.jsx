@@ -1,11 +1,32 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function ActionCards() {
+  const navigate = useNavigate();
+
   const cards = [
-    { title: 'Fee Structure and Payments', btn: 'Pay Now', color: 'success' },
-    { title: 'Subjects and Electives', btn: 'Complete Registration', color: 'primary' },
-    { title: 'Check Result', footer: 'Coming Soon..', muted: true },
-    { title: 'Documents and Forms', footer: 'Available 24/7', muted: false }
+    {
+      title: 'Fee Structure and Payments',
+      btn: 'Pay Now',
+      color: 'success',
+      path: '/feepayment' 
+    },
+    {
+      title: 'Subjects and Electives',
+      btn: 'Complete Registration',
+      color: 'primary',
+      path: '/subjects'  
+    },
+    {
+      title: 'Check Result',
+      footer: 'Coming Soon..',
+      muted: true
+    },
+    {
+      title: 'Documents and Forms',
+      footer: 'Available 24/7',
+      muted: false
+    }
   ];
 
   return (
@@ -15,9 +36,16 @@ function ActionCards() {
           <div className="bg-white border p-3 rounded text-center shadow-sm">
             <h6>{card.title}</h6>
             {card.btn ? (
-              <button className={`btn btn-${card.color} btn-sm mt-2`}>{card.btn}</button>
+              <button
+                className={`btn btn-${card.color} btn-sm mt-2`}
+                onClick={() => navigate(card.path)}
+              >
+                {card.btn}
+              </button>
             ) : (
-              <span className={`d-block mt-2 ${card.muted ? 'text-muted' : 'text-success'}`}>{card.footer}</span>
+              <span className={`d-block mt-2 ${card.muted ? 'text-muted' : 'text-success'}`}>
+                {card.footer}
+              </span>
             )}
           </div>
         </div>
