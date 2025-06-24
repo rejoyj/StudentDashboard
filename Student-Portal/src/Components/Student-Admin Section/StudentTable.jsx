@@ -1,23 +1,33 @@
-import React from 'react';
-import { Table, Button } from 'react-bootstrap';
+import React, { useState } from "react";
+import { Table, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const StudentTable = () => {
-  const tableRows = [];
+  const [page, setPage] = useState(1);
+  const rowsPerPage = 5;
 
-  for (let i = 0; i < 9; i++) {
-    tableRows.push(
-      <tr key={i}>
-        <td>Roll Number</td>
-        <td>Name</td>
-        <td>Course</td>
-        <td>Batch</td>
-        <td>Fee Status</td>
-        <td>Registration</td>
-        <td>Verification</td>
-        <td><Button variant="link">Details</Button></td>
-      </tr>
-    );
-  }
+  const students = Array.from({ length: 25 }, (_, i) => ({
+    roll: `20XX00${i + 1}`,
+    name: `Student ${i + 1}`,
+    course: "B.Tech",
+    batch: "2020-24",
+    feeStatus: i % 2 === 0 ? "No due" : "Due",
+    registration: "Provisional",
+    verification: i % 3 === 0 ? "Verified" : "Pending",
+  }));
+
+  const totalPages = Math.ceil(students.length / rowsPerPage);
+  const start = (page - 1) * rowsPerPage;
+  const end = start + rowsPerPage;
+  const currentStudents = students.slice(start, end);
+
+  const onPrevPage = () => {
+    if (page > 1) setPage(page - 1);
+  };
+
+  const onNextPage = () => {
+    if (page < totalPages) setPage(page + 1);
+  };
 
   return (
     <div className="my-3">
@@ -35,20 +45,46 @@ const StudentTable = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>20XX000X</td>
-            <td>Prem Kr.</td>
-            <td>B.Tech</td>
-            <td>2020-24</td>
-            <td>No due</td>
-            <td>Provisional</td>
-            <td>Pending</td>
-            <td><Button variant="link">Open</Button></td>
-          </tr>
-
-          {tableRows}
+          {currentStudents.map((student, index) => (
+            <tr key={index}>
+              <td>{student.roll}</td>
+              <td>{student.name}</td>
+              <td>{student.course}</td>
+              <td>{student.batch}</td>
+              <td>{student.feeStatus}</td>
+              <td>{student.registration}</td>
+              <td>{student.verification}</td>
+              <td>
+                <Link to={`/student/${student.roll}`} className="btn btn-link">
+                  Open
+                </Link>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </Table>
+
+      {/* Pagination Footer */}
+      <div className="d-flex justify-content-between align-items-center px-3 py-2 border-top">
+        <div>
+          <Button variant="outline-warning" onClick={onPrevPage} disabled={page === 1}>
+            Prev. Page
+          </Button>
+          <Button
+            variant="outline-warning"
+            className="ms-2"
+            onClick={onNextPage}
+            disabled={page === totalPages}
+          >
+            Next Page &gt;&gt;
+          </Button>
+        </div>
+        <div>
+          <small>
+            Page {page} of {totalPages}
+          </small>
+        </div>
+      </div>
     </div>
   );
 };
