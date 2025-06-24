@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import AdminLogin from './Components/Admin-Section/AdminLogin';
 import StudentDashboard from './StudentDashboard';
@@ -15,7 +15,7 @@ import AdminStudentProfile from './Components/AdminStudentProfile';
 
 const App = () => {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<NewLogin />} />
         <Route path="/studentlogin" element={<StudentLogin />} />
@@ -29,7 +29,7 @@ const App = () => {
         <Route path="/student-table" element={<StudentTable />} />
         <Route path="/admin-login" element={<AdminLogin />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 };
 
