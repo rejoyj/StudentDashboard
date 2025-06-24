@@ -4,13 +4,15 @@ import SpecificSearch from './StudentProfile-Admin View/SpecificSearch';
 import { Container, Row, Col } from 'react-bootstrap';
 import ContactInfo from './StudentProfile-Admin View/ContactInfo';
 import PaymentSummary from './StudentProfile-Admin View/PaymentSummary';
+import Bonafide from './Bonafied/Bonafied';
 const AdminStudentProfile = () => {
   return (
     <>
       <Container fluid className='mt-4'>
+        <Header/>
         <Row>
            <Col md={8}>
-            <Header/>
+            <Bonafide />
            </Col>
 
            <Col>
