@@ -73,7 +73,8 @@ function NewLogin() {
                 </div>
 
                 <div className="text-end mb-3">
-                  <a href="#" className="text-decoration-none small text-muted">Forgot Password?</a>
+                  <Link to="/forgot-password" className="text-decoration-none small text-muted">Forgot Password?</Link>
+
                 </div>
 
                 <button type="submit" className="btn btn-warning w-100 mb-3 fw-semibold">
