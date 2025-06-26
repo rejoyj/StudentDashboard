@@ -4,6 +4,8 @@ import StudentDashboard from './StudentDashboard';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import NewLogin from './Components/New-Admission/NewLogin';
+import ForgotPassword from './Components/ForgetPassword/ForgetPassword.jsx';
+
 import Subjects from './Components/Subjects/Subjects';
 import Bonafied from './Components/Bonafied/Bonafied';
 
@@ -16,6 +18,7 @@ import StudentDoc from './Components/Student-Doc/StudentDoc';
 import StudentTable from './Components/Student-Admin Section/StudentTable';
 
 import AdminStudentProfile from './Components/AdminStudentProfile';
+import StudentForgotPassword from './Components/ForgetPassword/StudentForgotPassword';
 
 
 const App = () => {
@@ -24,17 +27,19 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<NewLogin />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/studentlogin" element={<StudentLogin />} />
+        <Route path="/student-forgot-password" element={<StudentForgotPassword />} />
         
         <Route path="/student-dashboard" element={<StudentDashboard />} />
 
         <Route path="/feepayment" element={<FeePayment/>} />
         <Route path="/subjects" element={<Subjects/>} />
         
-      </Routes>
+      
       {/* <Subjects /> */}
-      <Bonafied />
-      <AdminStudentProfile />
+      {/* <Bonafied />
+      <AdminStudentProfile /> */}
 
          <Route path="/student-admin" element={<StudentAdmin />} />
       </Routes>

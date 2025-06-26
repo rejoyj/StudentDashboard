@@ -23,7 +23,8 @@ const StudentLogin = () => {
        </div>
 
        <div className='text-end mb-3'>
-        <a href="#" className='text-decoration-none small text-muted'>Forgot Password</a>
+        <Link to="/student-forgot-password" className='text-decoration-none small text-muted'>Forgot Password?</Link>
+
        </div>
 
        <button className='btn btn-warning w-100 fw-semibold'>LogIn as Admin</button>
