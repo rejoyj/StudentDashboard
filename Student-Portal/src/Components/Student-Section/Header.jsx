@@ -6,7 +6,7 @@ function Header() {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    // Perform logout logic here (e.g., clear tokens)
+    
     navigate('/');
   };
   
