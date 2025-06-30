@@ -15,7 +15,7 @@ app.use('/api/admin', adminRoutes); // ✅ AFTER app is defined
 // MongoDB connection
 mongoose.connect('mongodb://127.0.0.1:27017/studentportal');
 mongoose.connection.once('open', () => {
-  console.log('✅ Connected to MongoDB');
+  console.log('✅  Connected to MongoDB');
 });
 
 // Default test route
