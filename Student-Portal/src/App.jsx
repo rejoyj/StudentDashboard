@@ -41,13 +41,16 @@ const App = () => {
         <Route path="/subjects" element={<Subjects/>} />
         
       
-      {/* <Subjects /> */}
-      {/* <Bonafied />
-      <AdminStudentProfile /> */}
+    
+ 
+      {/* <AdminStudentProfile /> */}
 
 
       </Routes>
+   
     </BrowserRouter>
+    
+    // <AdminStudentProfile />
   );
 };
 

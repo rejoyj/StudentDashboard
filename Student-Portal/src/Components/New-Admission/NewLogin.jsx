@@ -5,22 +5,36 @@ import './NewLogin.css';
 
 function NewLogin() {
   const navigate = useNavigate();
+  
 
-  const ADMIN_ID = 'admin@iiitb.com';
-  const ADMIN_PASS = 'admin123';
+const [email, setEmail] = useState('');
+const [password, setPassword] = useState('');
+const [error, setError] = useState('');
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const handleLogin = async (e) => {
+  e.preventDefault();
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    if (email === ADMIN_ID && password === ADMIN_PASS) {
+  try {
+    const res = await fetch('http://localhost:5000/api/admin/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password }),
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      // ✅ Successful login, redirect to dashboard
       navigate('/student-dashboard');
     } else {
-      setError('Invalid email or password');
+      // ❌ Show error returned by server
+      setError(data.message || 'Login failed');
     }
-  };
+  } catch (err) {
+    setError('Server error');
+  }
+};
+
 
   return (
     <div className="background-section">
