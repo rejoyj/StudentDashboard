@@ -1,23 +1,28 @@
 import React, { useState } from 'react';
 import './StudentLogin.css';
 import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const StudentLogin = () => {
   const navigate = useNavigate();
-
-  const STUDENT_ID = 'student@iitb.com';
-  const STUDENT_PASS = 'stud123';
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    if (email === STUDENT_ID && password === STUDENT_PASS) {
-      navigate('/student-dashboard');
-    } else {
-      setError('Invalid email or password');
+
+    try {
+      const response = await axios.post('http://localhost:5000/api/student/login', {
+        email,
+        password
+      });
+
+      console.log("Login successful", response.data);
+      navigate('/student-dashboard'); // Redirect on success
+    } catch (err) {
+      setError(err.response?.data?.message || "Login failed");
     }
   };
 

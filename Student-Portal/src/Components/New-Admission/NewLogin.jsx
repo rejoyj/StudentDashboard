@@ -1,40 +1,34 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
+import axios from 'axios'; // Make sure axios is installed
 import './NewLogin.css';
 
 function NewLogin() {
   const navigate = useNavigate();
-  
 
-const [email, setEmail] = useState('');
-const [password, setPassword] = useState('');
-const [error, setError] = useState('');
+  // State Hooks
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
+  // Handle Login Submission
   const handleLogin = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  try {
-    const res = await fetch('http://localhost:5000/api/admin/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password }),
-    });
+    try {
+      const response = await axios.post("http://localhost:5000/api/admin/login", {
+        email,
+        password
+      });
 
-    const data = await res.json();
-
-    if (res.ok) {
-      // ✅ Successful login, redirect to dashboard
-      navigate('/student-dashboard');
-    } else {
-      // ❌ Show error returned by server
-      setError(data.message || 'Login failed');
+      console.log("Login successful", response.data);
+      // Navigate to admin dashboard after success
+      navigate('/admin-student-profile');
+    } catch (err) {
+      setError(err.response?.data?.message || "Login failed");
     }
-  } catch (err) {
-    setError('Server error');
-  }
-};
-
+  };
 
   return (
     <div className="background-section">
@@ -66,7 +60,7 @@ const [error, setError] = useState('');
                     type="email"
                     className="form-control"
                     id="email"
-                    placeholder="Enter your username"
+                    placeholder="Enter your email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
@@ -88,7 +82,6 @@ const [error, setError] = useState('');
 
                 <div className="text-end mb-3">
                   <Link to="/forgot-password" className="text-decoration-none small text-muted">Forgot Password?</Link>
-
                 </div>
 
                 <button type="submit" className="btn btn-warning w-100 mb-3 fw-semibold">
