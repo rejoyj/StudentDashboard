@@ -15,6 +15,7 @@ import StudentDoc from './Components/Student-Doc/StudentDoc';
 import StudentTable from './Components/Student-Admin Section/StudentTable';
 import AdminStudentProfile from './Components/AdminStudentProfile';
 import StudentForgotPassword from './Components/ForgetPassword/StudentForgotPassword';
+import HelpSupport from './Components/Help&Support/HelpAndSupport.jsx';
 
 const App = () => {
   return (
@@ -39,6 +40,7 @@ const App = () => {
 
         <Route path="/feepayment" element={<FeePayment/>} />
         <Route path="/subjects" element={<Subjects/>} />
+        <Route path='/helpandsupport' element ={<HelpSupport/>} />
         
       
     
