@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import logo from '../../assets/icons8-student-96 (1).png'; 
+import logo from '../../assets/university-of-vir'; 
 
 function Header() {
   const navigate = useNavigate();

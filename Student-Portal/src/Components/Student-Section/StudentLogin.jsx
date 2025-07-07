@@ -27,6 +27,7 @@ const StudentLogin = () => {
   };
 
   return (
+    <div className='background-section'>
     <div className="container-1 d-flex flex-column align-items-center justify-content-center">
       <div className="login-form p-4 flex-grow-1">
         <h5 className='text-center'>Student Login</h5>
@@ -75,6 +76,7 @@ const StudentLogin = () => {
           </small>
         </div>
       </div>
+    </div>
     </div>
   );
 };
