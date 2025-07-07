@@ -17,7 +17,8 @@ function StudentDashboard() {
         <Header />
         <div className="row g-4">
           <div className="col-md-4">
-            <ProfileCard />
+            <ProfileCard studentEmail="student@iitb.com" />
+
           </div>
           <div className="col-md-8">
             <StatusCards />

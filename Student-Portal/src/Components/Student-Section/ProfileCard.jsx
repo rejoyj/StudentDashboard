@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
-function ProfileCard({ student }) {
+function ProfileCard({ studentEmail }) {
+  const [profile, setProfile] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
-  const [profile, setProfile] = useState({});
 
   useEffect(() => {
-    if (student) {
-      setProfile(student);
-    }
-  }, [student]);
+  fetch(`http://localhost:5000/api/studentdash/profile/${studentEmail}`)
+    .then((res) => res.json())
+    .then((data) => setProfile(data))
+    .catch((err) => console.error('❌ Failed to load profile:', err));
+}, [studentEmail]);
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,8 +19,8 @@ function ProfileCard({ student }) {
 
   const handleToggleEdit = () => {
     if (isEditing) {
-      // Save updated profile to backend
-      fetch(`http://localhost:5000/api/student-dashboard/${profile.roll}`, {
+      // Save
+      fetch(`http://localhost:5000/api/student/profile/${profile.roll}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -35,12 +37,12 @@ function ProfileCard({ student }) {
     setIsEditing(!isEditing);
   };
 
-  if (!profile || Object.keys(profile).length === 0) {
+  if (!profile) {
     return <p className="text-center">Loading profile...</p>;
   }
 
   return (
-    <div className="p-3 border rounded text-center bg-white shadow-sm">
+    <div className="p-3 border rounded bg-white shadow-sm text-center">
       <img
         src={
           profile.image

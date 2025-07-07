@@ -20,8 +20,12 @@ mongoose.connect(process.env.MONGO_URI, {
 // Routes
 app.use("/api/admin", require("./routes/adminRoutes"));
 
-const studentRoutes = require("./routes/studentRoutes");
+const studentRoutes = require("./routes/studentRoutes");      // for login etc.
+const studentDashRoutes = require("./routes/studentdash");    // for profile etc.
+
 app.use("/api/student", studentRoutes);
+app.use("/api/studentdash", studentDashRoutes); // ✅ new route
+
 
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
