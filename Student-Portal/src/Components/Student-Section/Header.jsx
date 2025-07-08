@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../assets/university-of-virginia-2-logo-png-transparent.png';
+import logo from '../../assets/Clg-Logo.png';
 import { useNavigate } from 'react-router-dom';
 
 function Header() {
@@ -18,7 +18,7 @@ function Header() {
         />
         <div>
           <h6 className="mb-0 fw-bold">Student Section</h6>
-          <small className="text-muted">IIIT Bhagalpur</small>
+          <small className="text-muted">Manvian Institute</small>
         </div>
       </div>
       <div className="d-flex align-items-center gap-3">

@@ -37,7 +37,7 @@ function NewLogin() {
           <Col sm={7} className="d-flex justify-content-center text-white">
             <div className="p-5">
               <h1>Congratulations 🎉</h1>
-              <h2>Welcome to IIIT Bhagalpur!</h2>
+              <h2>Welcome to Manvian Institute!</h2>
               <h5>
                 To finish your enrolment, please complete your registration with your personal, academic details and fee payment.
                 This will help us to create your student profile, please enter accurate and complete information, as this will be used for official purposes.
