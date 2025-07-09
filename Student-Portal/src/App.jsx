@@ -16,11 +16,14 @@ import StudentTable from './Components/Student-Admin Section/StudentTable';
 import AdminStudentProfile from './Components/AdminStudentProfile';
 import StudentForgotPassword from './Components/ForgetPassword/StudentForgotPassword';
 import HelpSupport from './Components/Help&Support/HelpAndSupport.jsx';
+import Homepage from './Homepage';
 
 const App = () => {
   return (
     <BrowserRouter>
+   
       <Routes>
+        <Route path="/Home" element={<Homepage />} />
         <Route path="/" element={<NewLogin />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/studentlogin" element={<StudentLogin />} />
@@ -45,7 +48,7 @@ const App = () => {
       
     
  
-      {/* <AdminStudentProfile /> */}
+     
 
 
       </Routes>
@@ -53,6 +56,7 @@ const App = () => {
     </BrowserRouter>
     
     // <AdminStudentProfile />
+    
   );
 };
 
