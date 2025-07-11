@@ -13,22 +13,23 @@ function NewLogin() {
   const [error, setError] = useState('');
 
   // Handle Login Submission
-  const handleLogin = async (e) => {
-    e.preventDefault();
+const handleLogin = async (e) => {
+  e.preventDefault();
 
-    try {
-      const response = await axios.post("http://localhost:5000/api/admin/login", {
-        email,
-        password
-      });
+  try {
+    const response = await axios.post("http://localhost:8080/api/auth/login", {
+      username: email,
+      password
+    });
 
-      console.log("Login successful", response.data);
-      // Navigate to admin dashboard after success
-      navigate('/admin-student-profile');
-    } catch (err) {
-      setError(err.response?.data?.message || "Login failed");
-    }
-  };
+    console.log("Login successful", response.data);
+    localStorage.setItem("token", response.data.token); // Store JWT
+    navigate('/admin-student-profile');
+  } catch (err) {
+    setError(err.response?.data?.error || "Login failed");
+  }
+};
+
 
   return (
     <div className="background-section">

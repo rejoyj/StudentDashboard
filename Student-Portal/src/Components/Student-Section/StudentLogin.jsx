@@ -14,8 +14,8 @@ const StudentLogin = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5000/api/student/login', {
-        email,
+      const response = await axios.post("http://localhost:8080/api/auth/login", {
+        username: email,
         password
       });
 
